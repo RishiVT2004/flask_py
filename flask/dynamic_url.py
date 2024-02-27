@@ -2,10 +2,6 @@ from flask import Flask,render_template
 
 app = Flask(__name__)
 
-#bulding url dynamically -; 
-
-
-
 @app.route('/')
 def home_page():
     return render_template('portfolio.html')
@@ -17,6 +13,8 @@ def social_page():
 @app.route('/img')
 def image_page():
     return render_template('img.html')
+
+#bulding url dynamically -; 
 
 @app.route('/cgpa/<float:cgpa>') #parametric values, building url dynamically...
 def calculate(cgpa): 
@@ -30,8 +28,14 @@ def check_pass_fail(cgpa):
     else:
         result="not-eligible to appear for intern"
 
-    return f'the person is '+str(result)        
+    return f'<html><body><h1>judgement based on marks : </h1></body></html>'+str(result)        
     
+
+
+if __name__ == "__main__": #main method -> execution starts here
+    app.run(debug=True,port=8000) # debug = True -> helps to update page without re running...
+
+
 
 
 if __name__ == "__main__": #main method -> execution starts here
