@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+
+<body>
+ <div class="calculate">
+	<h1>Calculate average marks</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('form')}}" method="post">
+    	<input type="text" name="CSW" placeholder="CSW" required="required" />
+        <input type="text" name="ALA" placeholder="ALA" required="required" />
+		<input type="text" name="COA" placeholder="COA" required="required" />
+
+        <button type="submit" class="btn">Calculate Button</button><br><br>
+
+        The average marks sequred is {{score}}
+    </form>
+
+   <br>
+   <br>
+ </div>
+
+</body>
+</html>
